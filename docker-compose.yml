@@ -1,0 +1,11 @@
+version: '2'
+services:
+  compiler:
+    container_name: rocketmq-client-compiler
+    image: kerematam/rocketmq-client-cpp-compiler:latest
+    volumes:
+      - ./:/home/builder/rocketmq-client-cpp
+# Uncomment line below to avoid re-building of libraries and tests
+#    command: noJson noEvent noBoost test
+# Uncomment line below to prevent building with container start and keep container alive; so that container can be accessed via "docker exec -it rocketmq-client-compiler /bin/bash" and build can be done manually
+#    entrypoint: tail -f

@@ -69,4 +69,19 @@ to build x64 rocketmq-client:
 
     win32_build.bat build64
 
+### Docker
 
+Running following command will start docker container to build and mount it to project root folder: 
+
+		docker-compose up
+
+#### Access Compiler Container
+
+If you would like to have shell access to container, uncomment `entrypoint: tail -f` line in docker-compose.yml and run the docker-compose:
+
+		docker-compose up
+
+Then you may access the shell with following command :
+
+		docker exec -it rocketmq-client-compiler /bin/bash
+		
